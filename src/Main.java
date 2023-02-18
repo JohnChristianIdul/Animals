@@ -14,6 +14,7 @@ public static void main(String[] args) {
         System.out.println("3. Delete an animal");
         System.out.println("4. Display");
         System.out.println("5. Exit");
+        System.out.printf("Choose option: ");
         int choice = scan.nextInt();
         scan.nextLine();
 
@@ -26,13 +27,17 @@ public static void main(String[] args) {
                 if (type != null) {
                     if(type.equalsIgnoreCase("Cat")) {
                         Cat cat = new Cat(name);
-                        animals.addAnimal(cat);
+                        if(animals.addAnimal(cat)) {
+                            System.out.println("Cat " + name + " successfully added.");
+                        }
                     } else if(type.equalsIgnoreCase("Fish")){
                         Fish fish = new Fish(name);
-                        animals.addAnimal(fish);
+                        if(animals.addAnimal(fish)) {
+                            System.out.println("Fish " + name + " successfully added.");
+                        }
+                    } else{
+                        System.out.println("Animal name exist or you chose a type not specified.");
                     }
-                } else{
-                    System.out.println("Invalid!");
                 }
                 break;
             case 2:
