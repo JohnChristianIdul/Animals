@@ -12,29 +12,15 @@ public class ListAnimals {
             System.out.println("List is already full");
             return false;
         }
-        String name = String.valueOf(searchByName(a.getClass().getSimpleName()));
-        try {
-            for (int i = 0; i < count; i++) {
-                if (a.getClass().equals(Fish.class)) {
-                    if (name == ((Cat) a).getName()) {
-                        System.out.println("Name must be unique");
-                        return false;
-                    }
-                }
-                if (a.getClass().equals(Cat.class)) {
-                    if (name == ((Fish) a).getName()) {
-                        System.out.println("Name must be unique");
-                        return false;
-                    }
-                }
-                if(a.getClass().getName().equals(animals[i].getClass().getName())){
-                    System.out.println("Name must be unique");
-                    return false;
-                }
-            }
-        }catch(ClassCastException e){
-                System.out.println("Name already exists.");
+        String temp1 = ((Pet)a).getName();
+        String temp2 = null;
+        for (int i = 0; i < count; i++) {
+            temp2 = ((Pet)animals[i]).getName();
+            if(temp1.equals(temp2)){
+                System.out.println("Name must be unique");
+                System.out.println("");
                 return false;
+            }
         }
         animals[count] = a;
         count++;

@@ -15,7 +15,7 @@ public class Cat extends Animal implements Pet{
 
     @Override
     public String getName() {
-        return Catname;
+        return this.Catname;
     }
 
     @Override

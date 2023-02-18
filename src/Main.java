@@ -6,7 +6,7 @@ public static void main(String[] args) {
 
     System.out.printf("Enter array size: ");
     int size = scan.nextInt();
-
+    System.out.println("");
     ListAnimals animals = new ListAnimals(size);
     while(true){
         System.out.println("1. Add new animal");
@@ -20,7 +20,7 @@ public static void main(String[] args) {
 
         switch(choice){
             case 1:
-                System.out.printf("Type of animal(Fish/Cat):");
+                System.out.printf("Type of animal(Fish/Cat): ");
                 String type = scan.nextLine();
                 System.out.printf("Name: ");
                 String name = scan.nextLine();
@@ -29,11 +29,13 @@ public static void main(String[] args) {
                         Cat cat = new Cat(name);
                         if(animals.addAnimal(cat)) {
                             System.out.println("Cat " + name + " successfully added.");
+                            System.out.println("");
                         }
                     } else if(type.equalsIgnoreCase("Fish")){
                         Fish fish = new Fish(name);
                         if(animals.addAnimal(fish)) {
                             System.out.println("Fish " + name + " successfully added.");
+                            System.out.println("");
                         }
                     } else{
                         System.out.println("Animal name exist or you chose a type not specified.");
