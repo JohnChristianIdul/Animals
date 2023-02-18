@@ -29,13 +29,19 @@ public class ListAnimals {
     }
 
     public Animal searchByName(String name){
-        for(int i = 0; i<count; i++){
-            if(animals[i] instanceof Pet){
-                if(((Pet) animals[i]).getName().equals(name)){
-                    return animals[i];
-                }
+        for(Animal a : animals){
+            Pet p = (Pet) a;
+            if(p.getName().equals(name)){
+                return a;
             }
         }
+//        for(int i = 0; i<count; i++){
+//            if(animals[i] instanceof Pet){
+//                if(((Pet) animals[i]).getName().equals(name)){
+//                    return animals[i];
+//                }
+//            }
+//        }
         return null;
     }
 
